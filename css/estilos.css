@@ -1,0 +1,175 @@
+/*
+Autor: Reinaldo Guerra
+Correo: r.guerra.villagra@gmail.com
+*/
+
+/*estilos de selector de etiqueta para
+propiedades generales de el sitio web
+color de texto, tamaño de titulos, textos, reset, hacks*/
+
+/* asterisco selecciona todo
+selector universal */
+
+
+html * {
+    margin: 0px;
+    padding: 0px;
+    /*no suma el borde ni el relleno
+    al ancho total del elemento*/
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px; /*tamaño base*/
+    color: #707070; /*color base*/
+}
+/*unidad em en letras equivale al 
+tamaño de fuente base del documento
+1em ->15px*/
+
+h1 {
+    font-size: 2em; /*2x15=30px*/
+}
+
+h2 {
+    font-size: 1.5em; /*1.5x15=22.5px*/
+}
+
+h3 {
+    font-size: 1em; /*1x15=15px*/
+}
+
+p {
+    line-height: 2em;
+}
+
+/*seudo clases o selectores contextuales etiqueta: selector o estado */
+
+a:link {color: #3b2211; 
+} /*estado reposo*/
+
+a:hover {color: #de820f; 
+} /*estado sobre*/
+
+/*estilos para cabecera*/
+.cabecera {
+/*propiedad-coordenada: grosor color tipo(dotted,double)*/ 
+border-top: 10px #3b2211 solid;
+padding-top: 2%;
+padding-bottom: 2%;
+background-color: #fff;
+}
+
+/*ejemplo de selector de estilo id para elementos únicos como por ejemplo el logotipo del sitio*/
+#logotipo {float: left;}
+
+/*estilo para barra de navegación*/
+.navbar {float :right;}
+
+/*.clearfix {
+            clear: both;
+}*/
+
+/*selector padre (contenedor) selector hijo (anidado)*/
+.navbar li {
+            display:inline-block; /*el elemento se transforma en bloque con propiedades de linea otra alternativa para columnas pero deja un margen adicional*/ 
+            list-style: none; /*quita viñetas*/
+}
+
+.navbar a  {
+           display: block; /*la etiqueta a se transforma en bloque*/
+           padding: 10px; /*al ser bloque se aplica el relleno*/
+           text-decoration: none; /*quita subrayado de a*/
+}
+
+.navbar a :hover {
+                 background-color: #3b2211; /*aplicando color de fondo*/
+                 color: #fff; /*color de texto*/   
+}
+
+.titulo_principal {
+                    text-align: center;
+                    border-bottom: 2px #cccccc dotted;
+                    padding-bottom: 10px;
+                    margin-bottom: 10px; 
+}
+
+.pie { background-color: #3b2211; color: #fff; text-align: center ; padding: 3%}
+
+.restorant{ 
+	text-align: center; 
+	background-color: #f6f6f6;
+	/*relleno superior e inferior en 5%
+	derecha e izquierda de 10%*/
+	padding: 5% 10% ;
+}
+
+.carta {padding-top: 5%; padding-bottom: 5%}
+
+.banner {
+        background-image: url(images/fondo.jpg);
+        height: 200px;
+        background-size: cover;
+        background-position: center;
+}
+
+clearfix{
+	clear: both;
+}
+
+.img-responsiva {
+	width: 100%; /*ajusta imagen al ancho del contenedor*/
+	height: auto; /*proporción alto*/
+	max-width: 540px; /*ancho maximo*/
+}
+
+.contenedor {
+	margin: auto;
+	max-width: 576px
+}
+
+
+
+/*  CONSULTA PARA TABLET
+min-width:577px   max-width:768px   */
+@media screen and (min-width: 577px) and (max-width: 768px){
+    .contenedor{ 
+       max-width: 768px;
+       margin: auto;
+    }
+    
+    /*crea una clase para diagramar en  2 columnas*/
+    .col-50 {
+        width: 50%; /*100/5=50*/
+        padding:1%;
+        float: left;
+    }
+    
+    } /*fin consulta tablet*/
+    
+    
+    /*consulta para desktop, ancho mínimo 960px
+    en este caso no se especifica ancho máximo */
+    @media screen and (min-width:769px){ 
+    /*definir un nuevo  ancho máximo para los contenedores*/
+    .contenedor{ 
+       max-width: 1360px;
+       margin: auto;
+    }
+    
+    /*crea una clase para diagramar en  3columnas*/
+    .col-33 {
+        width: 33.33%; /*100/3=33.33*/
+        padding:1%;
+        float: left;
+    }
+    
+    }/*cierre de la consulta*/
+
+
+
+
+
+
+
